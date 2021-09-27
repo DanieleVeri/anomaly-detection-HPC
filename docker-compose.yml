@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  jupyter:
+    build: .
+    ports:
+    - "8888:8888"
+    volumes:
+    - ./notebooks:/app/notebooks
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
